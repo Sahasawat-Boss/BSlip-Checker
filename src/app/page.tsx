@@ -7,7 +7,7 @@ function Page() {
         BSlip-Checker
       </p>
       <p className='text-xl'>
-        Test Update
+        Server is running
       </p>
 
     </main>

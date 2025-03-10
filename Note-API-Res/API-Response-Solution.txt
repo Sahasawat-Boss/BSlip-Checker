@@ -1,0 +1,51 @@
+{
+  "data": {
+    "data": {
+      "payload": "0041000600000101030040220015068184505APP091395102TH91047F4F",
+      "transRef": "015068184505APP09139",
+      "date": "2025-03-09T18:45:05+07:00",
+      "countryCode": "TH",
+      "amount": {
+        "amount": 150,
+        "local": {
+          "amount": 150,
+          "currency": "764"
+        }
+      }
+    }
+  }
+}
+
+### Data ห่อ Data 2 ชั้น
+  the actual data you're trying to access is wrapped under two levels: responseData?.data?.data. This means that in your case, to properly access the nested data, you will need to add the .data? again to reach the actual data.
+Interface เข้าไป
+
+
+interface EasySlipResponse {
+  status: number;
+  data: {
+    data: {
+      payload: string;
+      transRef: string;
+      date: string;
+      countryCode: string;
+      amount: AmountDetails;
+      fee: number;
+      ref1: string;
+      ref2: string;
+      ref3: string;
+      sender: {
+        bank: BankAccount;
+        account: AccountDetails;
+      };
+      receiver: {
+        bank: BankAccount;
+        account: AccountDetails;
+        proxy: {
+          type: string;
+          account: string;
+        };
+      };
+    };
+  };
+}

@@ -1,0 +1,56 @@
+{
+    "data": {
+        "status": 200,
+        "data": {
+            "payload": "0041000600000101030040220015011082810CTF045195102TH9104E9B5",
+            "transRef": "015011082810CTF04519",
+            "date": "2025-01-11T08:28:10+07:00",
+            "countryCode": "TH",
+            "amount": {
+                "amount": 55,
+                "local": {
+                    "amount": 55,
+                    "currency": "764"
+                }
+            },
+            "fee": 0,
+            "ref1": "",
+            "ref2": "",
+            "ref3": "",
+            "sender": {
+                "bank": {
+                    "id": "004",
+                    "name": "ธนาคารกสิกรไทย",
+                    "short": "KBANK"
+                },
+                "account": {
+                    "name": {
+                        "th": "นาย สหัสวรรษ เ",
+                        "en": "MR. sahasawat r"
+                    },
+                    "bank": {
+                        "type": "BANKAC",
+                        "account": "xxx-x-x9596-x"
+                    }
+                }
+            },
+            "receiver": {
+                "bank": {
+                    "id": "004",
+                    "name": "ธนาคารกสิกรไทย",
+                    "short": "KBANK"
+                },
+                "account": {
+                    "name": {
+                        "th": "นาย ธนะศักดิ์ ว",
+                        "en": "MR. THANASAK W"
+                    },
+                    "bank": {
+                        "type": "BANKAC",
+                        "account": "xxx-x-x9403-x"
+                    }
+                }
+            }
+        }
+    }
+}

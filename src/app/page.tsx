@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback } from 'react'
 import Image from 'next/image'
+import { FaCloudUploadAlt, FaSpinner } from "react-icons/fa"; // Import React Icon
 
 // Define the response data type from EasySlip API
 interface AmountDetails {
@@ -193,26 +194,42 @@ function App() {
   return (
     <main className="p-5 max-w-4xl mx-auto">
       <section className="text-center mb-8">
-        <h1 className="text-3xl font-semibold text-blue-600 ">Bslip-Checker</h1> {/* Title of the page */}
+        <h1 className="text-3xl font-semibold text-blue-700 drop-shadow-lg ">Bslip-Checker</h1> {/* Title of the page */}
       </section>
 
 
-      <section className="mb-8">
-        <label htmlFor="file" className="block text-xl font-medium mb-2 text-center">อัพโหลดรูป Slip</label> {/* Label for file input */}
+      <section className="mb-6">
         {/* File Upload Section */}
+        <label htmlFor="file" className="block text-xl font-semibold mb-3 text-center text-gray-700">
+          อัพโหลดรูป Slip
+        </label>
+
         <div
-          className=" border-2 border-dashed border-gray-300 rounded-lg hover:bg-gray-100 transition-all"
-          onDrop={onDrop}  // Trigger onDrop when files are dropped
-          onDragOver={onDragOver}  // Allow drag over
+          className="border-2 border-dashed border-gray-400 rounded-lg p-6 flex flex-col items-center justify-center text-gray-500 hover:bg-gray-100 transition-all cursor-pointer"
+          onDrop={onDrop}
+          onDragOver={onDragOver}
         >
           <input
             type="file"
             id="file"
             name="file"
-            onChange={onImageChange}  // Trigger onImageChange when file is selected
-            className="w-full cursor-pointer opacity-50"  // Hide file input
+            accept="image/*"
+            onChange={onImageChange}
+            className="hidden"
           />
+
+          <label
+            htmlFor="file"
+            className="flex flex-col items-center cursor-pointer w-full h-full"
+          >
+            {/* Upload Icon */}
+            <FaCloudUploadAlt className="text-4xl text-gray-400 mb-2" />
+
+            <p className="text-gray-600 text-sm">📂 ลากไฟล์มาวาง หรือคลิกเพื่ออัพโหลด</p>
+            <p className="text-xs text-gray-500 mt-1">(รองรับเฉพาะไฟล์ภาพ เช่น .jpg, .png, .jpeg)</p>
+          </label>
         </div>
+
         {/* File Upload Section */}
 
         {/* Display image preview if an image is selected */}
@@ -237,15 +254,26 @@ function App() {
       </section>
 
       {/* Checking Slip Button */}
-      <section className="text-center mb-10">
+      <section className="text-center mb-10 flex justify-center items-center">
         <button
           onClick={easyslip}
-          className={`bg-blue-700 text-white px-6 py-3 rounded-md mt-3 ${loading ? 'bg-blue-300 cursor-not-allowed' : 'hover:bg-blue-400'}`}
+          className={`flex items-center justify-center gap-2 bg-gradient-to-r from-blue-700 to-blue-500 text-white px-6 py-2 rounded-md mt-3 font-semibold transition-all duration-300 hover:scale-110 cursor-pointer ${loading
+            ? "bg-blue-300 cursor-not-allowed opacity-70 "
+            : "hover:bg-blue-500 hover:shadow-md"
+            }`}
           disabled={loading}
         >
-          {loading ? 'Checking...' : 'Check'}  {/* Button text based on loading state */}
+          {loading ? (
+            <>
+              <FaSpinner className="animate-spin text-white text-lg" />
+              Checking...
+            </>
+          ) : ( 
+            "Check"
+          )}
         </button>
       </section>
+
 
       {/* Info Display Section */}
       <section className="bg-white border p-5 rounded-lg shadow-md mt-8">

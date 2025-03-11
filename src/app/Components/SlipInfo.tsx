@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from 'react';
 
@@ -73,8 +73,8 @@ const SlipInfo: React.FC<SlipInfoProps> = ({ responseData }) => {
             {/* Display Date */}
             <p><strong className='text-blue-700'>Date:</strong> {responseData?.data?.data?.date ? new Date(responseData.data.data.date).toLocaleString() : 'N/A'}</p>
 
-            {/* Display Transaction Amount */}
-            <p><strong className='text-blue-700'>Amount:</strong> {responseData?.data?.data?.amount?.amount} {responseData?.data?.data?.amount?.local?.currency}</p>
+            {/* Display Transaction Amount (without currency) */}
+            <p><strong className='text-blue-700'>Amount (Baht):</strong> {responseData?.data?.data?.amount?.amount}</p>
 
             {/* Sender Information */}
             <div>

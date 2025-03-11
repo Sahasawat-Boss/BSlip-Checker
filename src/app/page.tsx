@@ -74,7 +74,7 @@ const defaultResponseData: EasySlipResponse = {
         amount: 0,
         local: {
           amount: 0,
-          currency: 'THB',
+          currency: '',
         },
       },
       fee: 0,
@@ -138,7 +138,7 @@ function App() {
       const res = await fetch('/api/easyslip', { method: 'POST', body: formData });
       if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
       const data: EasySlipResponse = await res.json();
-      console.error('API EasySlip Response:', data);
+      console.log('API EasySlip Response:', data);
       setResponseData(data);
     } catch (error) {
       console.error('Error Occurred:', error);

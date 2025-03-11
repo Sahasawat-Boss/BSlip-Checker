@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.gradient-bg {
+  position: fixed; /* Keep the background fixed while scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -99; /* Move the background behind other content */
+  background-image: radial-gradient(at 27% 37%,
+      hsla(220, 98%, 25%, 1) 0px,
+      /* Dark Navy Blue */
+      transparent 20%),
+    radial-gradient(at 84% 21%, hsla(215, 90%, 30%, 1) 0px,
+      /* Deep Ocean Blue */
+      transparent 50%),
+    radial-gradient(at 52% 70%, hsla(230, 85%, 20%, 1) 0px,
+      /* Midnight Blue */
+      transparent 50%),
+    radial-gradient(at 10% 29%, hsla(240, 90%, 22%, 1) 0px,
+      /* Dark Royal Blue */
+      transparent 50%),
+    radial-gradient(at 97% 96%, hsla(210, 85%, 27%, 1) 0px,
+      /* Blue Steel */
+      transparent 50%),
+    radial-gradient(at 33% 40%, hsla(228, 70%, 35%, 1) 0px,
+      /* Space Blue */
+      transparent 50%),
+    radial-gradient(at 79% 53%, hsla(220, 75%, 40%, 1) 0px,
+      /* Deep Cobalt */
+      transparent 50%);
+  filter: blur(80px) saturate(180%);
+  opacity: 0.08; /* Increase opacity for a stronger effect */
+  pointer-events: none; /* Prevents the background from interfering with clicks */
+}

@@ -11,7 +11,7 @@ function Navbar() {
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
-        <nav className="bg-[#202b68] p-4 shadow-lg">
+        <nav className="bg-gradient-to-r from-[#1E2A47] to-[#374785] p-4 shadow-lg ">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo Section */}
                 <div className="flex items-center">
@@ -23,7 +23,7 @@ function Navbar() {
                         className="mr-3 px-0.5 rounded-full"
                     />
                     <h1 className="text-white text-xl font-semibold">
-                        Bslip-Checker
+                        BSlip-Checker
                     </h1>
                 </div>
 
@@ -37,7 +37,7 @@ function Navbar() {
                 {/* Mobile Menu Button */}
                 <button
                     onClick={toggleMenu}
-                    className="lg:hidden text-white text-2xl focus:outline-none"
+                    className="lg:hidden text-white text-2xl focus:outline-none cursor-pointer hover:text-gray-400"
                     aria-label="Toggle Menu"
                 >
                     {menuOpen ? <FaTimes /> : <FaBars />}
@@ -46,21 +46,21 @@ function Navbar() {
 
             {/* Mobile Menu (Slide-in Effect) */}
             <div
-                className={`lg:hidden fixed top-0 right-0 w-64 h-full bg-blue-900 shadow-lg transform ${menuOpen ? "translate-x-0" : "translate-x-full"
+                className={`z-50 lg:hidden fixed top-0 right-0 w-64 h-full  bg-gradient-to-t from-[#151e35] to-[#374683] shadow-xl transform ${menuOpen ? "translate-x-" : "translate-x-full"
                     } transition-transform duration-300 ease-in-out`}
             >
                 <button
                     onClick={toggleMenu}
-                    className="absolute top-4 right-4 text-white text-2xl"
+                    className="absolute top-4 right-4 text-white text-2xl cursor-pointer hover:text-gray-400"
                     aria-label="Close Menu"
                 >
                     <FaTimes />
                 </button>
 
-                <div className="flex flex-col items-center mt-20 space-y-6">
-                    <a href="#" className="text-white text-lg hover:text-gray-300 transition" onClick={toggleMenu}>Home</a>
-                    <a href="#about" className="text-white text-lg hover:text-gray-300 transition" onClick={toggleMenu}>About</a>
-                    <a href="#contact" className="text-white text-lg hover:text-gray-300 transition" onClick={toggleMenu}>Contact</a>
+                <div className="flex flex-col items-center mt-20 space-y-6 ">
+                    <a href="#" className="text-white text-lg hover:text-gray-400 transition" onClick={toggleMenu}>Home</a>
+                    <a href="#about" className="text-white text-lg hover:text-gray-400 transition" onClick={toggleMenu}>About</a>
+                    <a href="#contact" className="text-white text-lg hover:text-gray-400 transition" onClick={toggleMenu}>Contact</a>
                 </div>
             </div>
         </nav>

@@ -11,12 +11,12 @@ The app processes uploaded images of slips and extracts transaction details such
 ## 🛠️ How It Works
 1. **Upload a Thai bank transfer slip**.
 2. Click the **"Check"** button.
-3. The app **extracts transaction details**.
+3. The app **retrieves and displays transaction information from the bank database**.
 4. Users can verify the extracted information.
 
 ## 🔧 Tech Stack
 - **Frontend:** Next.js (React Framework)
-- **Backend:** OCR-based text recognition
+- **Backend:**  OCR-QA code and API service for checking with the bank database
 - **UI Framework:** Tailwind CSS
 
 

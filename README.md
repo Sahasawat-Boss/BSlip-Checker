@@ -22,3 +22,4 @@ The app processes uploaded images of slips and extracts transaction details such
 
 
 
+

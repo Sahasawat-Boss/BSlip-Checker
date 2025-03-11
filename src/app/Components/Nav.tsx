@@ -11,8 +11,8 @@ function Navbar() {
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
-        <nav className="bg-gradient-to-r from-[#1E2A47] to-[#374785] p-4 shadow-lg ">
-            <div className="container mx-auto flex justify-between items-center">
+        <nav className="bg-gradient-to-r from-[#1E2A47] to-[#374785] p-4 px-5 lg:px-12 shadow-lg ">
+            <div className=" flex justify-between items-center">
                 {/* Logo Section */}
                 <div className="flex items-center animate-fade-in-down">
                     <Image
@@ -25,7 +25,6 @@ function Navbar() {
                     <h1 className="text-2xl font-extrabold italic text-white tracking-wider">
                         BSlip-Checker
                     </h1>
-
                 </div>
 
                 {/* Desktop Menu */}

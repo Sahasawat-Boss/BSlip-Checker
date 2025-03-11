@@ -128,7 +128,7 @@ function App() {
 
   async function easyslip() {
     if (!file) {
-      alert('No file selected');
+      alert('โปรดเลือกและอัปโหลดไฟล์สลิปของคุณ');
       return;
     }
     setLoading(true);
@@ -169,9 +169,9 @@ function App() {
           </div>
 
           {image && (
-            <div className="relative mt-6 mx-auto">
+            <div className="relative mt-3 mx-auto flex flex-col justify-center items-center">
+              <button onClick={removeImage} className="mb-2 cursor-pointer bg-red-600 text-white text-base px-6 py-0.5 rounded-lg hover:bg-red-400">ลบ</button>
               <Image src={image} alt="Uploaded Preview" width={360} height={360} className="mx-auto" />
-              <button onClick={removeImage} className="absolute -top-2 -right-10 cursor-pointer bg-red-700 text-white text-xl px-2 rounded-full hover:bg-red-400">&times;</button>
             </div>
           )}
         </section>

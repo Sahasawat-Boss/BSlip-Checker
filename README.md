@@ -2,6 +2,8 @@
 
 **BSlip-Checker** is a web application designed to **verify and extract information from Thai bank transfer slips**. 
 
+BSlip-Checker VDO >> https://www.youtube.com/shorts/ylGrFObM-uw
+
 The app processes uploaded images of slips and extracts transaction details such as sender, receiver, amount, and date.
 
 ![Screenshot 2025-03-11 155246](https://github.com/user-attachments/assets/a301adb1-84d2-44c1-b899-a2175e8ca6e0)

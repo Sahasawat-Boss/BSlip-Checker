@@ -28,9 +28,9 @@ const TitleApp: React.FC = () => {
                 BSlip-Checker
 
                 {/* Info Icon */}
-                <span className="relative inline-block">
+                <span className="relative inline-block ">
                     <FaInfoCircle
-                        className="absolute top-0 right-[-30px] bg-white rounded-full text-gray-400 text-xl cursor-pointer hover:scale-125 transition opacity-60"
+                        className="absolute top-0 right-[-30px] bg-white rounded-full text-gray-400 text-xl cursor-pointer hover:scale-125 transition opacity-70 "
                         onClick={togglePopup} // Show on click
                         onMouseEnter={() => setIsPopupOpen(true)} // Show on hover
                         aria-label="More Info"
@@ -42,11 +42,11 @@ const TitleApp: React.FC = () => {
             {isPopupOpen && (
                 <div
                     ref={tooltipRef}
-                    className="fixed top-36 left-1/2 -translate-x-1/2 w-80 bg-white text-gray-900 rounded-lg p-4 shadow-2xl text-base z-[100] transition-opacity duration-300">
+                    className="fixed top-36 left-1/2 -translate-x-1/2 w-80 bg-white text-gray-900 rounded-lg py-8 px-4 shadow-2xl text-base z-[100] transition-opacity duration-300 border border-gray-300">
 
                     {/* Tooltip Content */}
-                    <p className="text-gray-700 font-semibold">BSlip-Checker</p>
-                    <p className="text-gray-600">
+                    <p className="text-gray-900 font-semibold mb-2">BSlip-Checker</p>
+                    <p className="text-gray-800">
                         เป็นเครื่องมือที่ช่วยตรวจสอบสลิปโอนเงินจาก QR Code
                         เพื่อยืนยันความถูกต้องของข้อมูลและป้องกันการปลอมแปลง
                     </p>

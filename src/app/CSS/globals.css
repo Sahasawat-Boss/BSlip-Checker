@@ -34,6 +34,6 @@ body {
       /* Deep Cobalt */
       transparent 50%);
   filter: blur(80px) saturate(180%);
-  opacity: 0.08; /* Increase opacity for a stronger effect */
+  opacity: 0.1; /* Increase opacity for a stronger effect */
   pointer-events: none; /* Prevents the background from interfering with clicks */
 }

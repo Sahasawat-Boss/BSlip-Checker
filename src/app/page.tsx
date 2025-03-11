@@ -151,10 +151,11 @@ function App() {
       {/* Background Gradient */}
       <div className="gradient-bg"></div>
 
-<TitleApp/>
+      <TitleApp />
 
-      <section className="mb-6">
-        <label htmlFor="file" className="block text-xl font-semibold mb-3 text-center text-gray-700">อัพโหลดรูป Slip</label>
+      {/* Upload and Button Section */}
+      <section className="mb-6 z-">
+        <label htmlFor="file" className="block text-xl font-bold mb-2 text-center bg-gradient-to-r from-[#23335c] to-[#3051d6] text-transparent bg-clip-text drop-shadow-lg">อัพโหลด Slip</label>
 
         <div className="border-2 border-dashed border-gray-400 rounded-lg p-6 flex flex-col items-center justify-center text-gray-500 bg-white hover:bg-gray-100 transition-all cursor-pointer shadow-md" onDrop={onDrop} onDragOver={onDragOver}>
           <input type="file" id="file" accept="image/*" onChange={onImageChange} className="hidden" />
@@ -172,11 +173,27 @@ function App() {
         )}
       </section>
 
-      <section className="text-center mb-10">
-        <button onClick={easyslip} className={`bg-blue-500 text-white px-5 py-1.5 rounded-md ${loading ? 'opacity-50' : 'hover:scale-110'}`} disabled={loading}>
-          {loading ? <><FaSpinner className="animate-spin" /> Checking... </> : "Check Slip"}
+      <section className="mb-2 flex justify-center">
+        <button
+          onClick={easyslip}
+          className={`relative flex items-center justify-center gap-2 px-10 py-1.5 font-semibold text-lg 
+              border-2 border-transparent bg-gradient-to-r from-[#3c4f7e] to-[#4e67ce] 
+              text-white rounded-lg shadow-md transition-all duration-300 ease-in-out 
+              ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 hover:opacity-85 hover:shadow-lg hover:cursor-pointer'}`}
+          disabled={loading}
+        >
+          {loading ? (
+            <>
+              <FaSpinner className="animate-spin text-white text-lg" />
+              Checking...
+            </>
+          ) : (
+            "Check Slip"
+          )}
         </button>
       </section>
+
+      {/* Upload and Button Section */}
 
       {/*//! Slip Info Compoenent Here*/}
       <SlipInfo responseData={responseData} />

@@ -14,7 +14,7 @@ function Navbar() {
         <nav className="bg-gradient-to-r from-[#1E2A47] to-[#374785] p-4 shadow-lg ">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo Section */}
-                <div className="flex items-center">
+                <div className="flex items-center animate-fade-in-down">
                     <Image
                         src="/BS.png" // Replace with your logo path
                         alt="Logo"
@@ -28,16 +28,16 @@ function Navbar() {
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden lg:flex space-x-6">
+                <div className="hidden md:flex space-x-6 animate-fade-in-down">
                     <a href="#" className="text-white hover:text-gray-300 transition">Home</a>
-                    <a href="#about" className="text-white hover:text-gray-300 transition">About</a>
-                    <a href="#contact" className="text-white hover:text-gray-300 transition">Contact</a>
+                    <a href="#about" className="text-black transition">About</a>
+                    <a href="#contact" className="text-black transition">Contact</a>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <button
                     onClick={toggleMenu}
-                    className="lg:hidden text-white text-2xl focus:outline-none cursor-pointer hover:text-gray-400"
+                    className="md:hidden text-white text-2xl focus:outline-none cursor-pointer hover:text-gray-400 animate-fade-in-down"
                     aria-label="Toggle Menu"
                 >
                     {menuOpen ? <FaTimes /> : <FaBars />}
@@ -46,7 +46,7 @@ function Navbar() {
 
             {/* Mobile Menu (Slide-in Effect) */}
             <div
-                className={`z-50 lg:hidden fixed top-0 right-0 w-64 h-full  bg-gradient-to-t from-[#151e35] to-[#374683] shadow-xl transform ${menuOpen ? "translate-x-" : "translate-x-full"
+                className={`z-50 md:hidden fixed top-0 right-0 w-64 h-full  bg-gradient-to-t from-[#151e35] to-[#374683] shadow-xl transform ${menuOpen ? "translate-x-" : "translate-x-full"
                     } transition-transform duration-300 ease-in-out`}
             >
                 <button
@@ -59,8 +59,8 @@ function Navbar() {
 
                 <div className="flex flex-col items-center mt-20 space-y-6 ">
                     <a href="#" className="text-white text-lg hover:text-gray-400 transition" onClick={toggleMenu}>Home</a>
-                    <a href="#about" className="text-white text-lg hover:text-gray-400 transition" onClick={toggleMenu}>About</a>
-                    <a href="#contact" className="text-white text-lg hover:text-gray-400 transition" onClick={toggleMenu}>Contact</a>
+                    <a href="#about" className="text-black text-lg  transition" onClick={toggleMenu}>About</a>
+                    <a href="#contact" className="text-black text-lg  transition" onClick={toggleMenu}>Contact</a>
                 </div>
             </div>
         </nav>

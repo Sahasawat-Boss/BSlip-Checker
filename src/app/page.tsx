@@ -2,7 +2,7 @@
 
 import React, { useState, useCallback } from 'react';
 import Image from 'next/image';
-import { FaCloudUploadAlt, FaSpinner } from "react-icons/fa"; // Import React Icon
+import { FaFileUpload, FaSpinner } from "react-icons/fa"; // Import React Icon
 import SlipInfo from './Components/SlipInfo';
 import TitleApp from './Components/TitleApp';
 
@@ -154,13 +154,14 @@ function App() {
       <TitleApp />
 
       {/* Upload and Button Section */}
-      <section className="mb-6 z-">
-        <label htmlFor="file" className="block text-xl font-bold mb-2 text-center bg-gradient-to-r from-[#23335c] to-[#3051d6] text-transparent bg-clip-text drop-shadow-lg">อัพโหลด Slip</label>
+      <section className="mb-6 z-10 animate-fade-in flex flex-col justify-center items-center">
+        <label htmlFor="file" className="hidden text-xl font-bold mb-2 text-center bg-gradient-to-r from-[#23335c] to-[#3051d6] text-transparent bg-clip-text drop-shadow-lg">อัพโหลด Slip</label>
 
-        <div className="border-2 border-dashed border-gray-400 rounded-lg p-6 flex flex-col items-center justify-center text-gray-500 bg-white hover:bg-gray-100 transition-all cursor-pointer shadow-md" onDrop={onDrop} onDragOver={onDragOver}>
-          <input type="file" id="file" accept="image/*" onChange={onImageChange} className="hidden" />
+        <div className="border-2 border-dashed border-gray-400 rounded-lg py-6 px-12 flex flex-col items-center justify-center text-gray-500 bg-white hover:bg-gray-100 transition-all cursor-pointer shadow-md w-fit"
+          onDrop={onDrop} onDragOver={onDragOver}>
+          <input type="file" id="file" accept="image/*" onChange={onImageChange} className="hidden w-full h-fill" />
           <label htmlFor="file" className="flex flex-col items-center cursor-pointer">
-            <FaCloudUploadAlt className="text-4xl text-gray-400 mb-2" />
+            <FaFileUpload className="text-4xl text-gray-400 mb-2" />
             <p className="text-gray-600 text-sm">📂 ลากไฟล์มาวาง หรือคลิกเพื่ออัพโหลด</p>
           </label>
         </div>
@@ -168,12 +169,12 @@ function App() {
         {image && (
           <div className="relative mt-6 mx-auto">
             <Image src={image} alt="Uploaded Preview" width={360} height={360} className="mx-auto" />
-            <button onClick={removeImage} className="absolute top-0 right-0 bg-red-600 text-white px-2 rounded-full">&times;</button>
+            <button onClick={removeImage} className="absolute -top-2 -right-10 bg-red-600 text-white text-xl px-2 rounded-full hover:bg-red-400">&times;</button>
           </div>
         )}
       </section>
 
-      <section className="mb-2 flex justify-center">
+      <section className="mb-2 flex justify-center animate-fade-in-up">
         <button
           onClick={easyslip}
           className={`relative flex items-center justify-center gap-2 px-10 py-1.5 font-semibold text-lg 

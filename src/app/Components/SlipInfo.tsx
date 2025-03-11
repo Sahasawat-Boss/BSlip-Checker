@@ -63,7 +63,7 @@ interface SlipInfoProps {
 
 const SlipInfo: React.FC<SlipInfoProps> = ({ responseData }) => {
     return (
-        <section className="bg-white border border-gray-100 p-5 rounded-lg shadow-lg mt-8">
+        <section className="bg-white border border-gray-100 p-5 rounded-lg shadow-lg mt-8 animate-fade-in">
             {/* Section title */}
             <h2 className="text-2xl font-semibold mb-3 border-b border-gray-300">Slip Information</h2>
 

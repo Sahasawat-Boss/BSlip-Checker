@@ -4,7 +4,8 @@
 
 The app processes uploaded images of slips and extracts transaction details such as sender, receiver, amount, and date.
 
-![Screenshot 2025-03-10 221913](https://github.com/user-attachments/assets/32fa6aa6-e186-46c4-945d-ccdae46917f7)
+![image](https://github.com/user-attachments/assets/1f523c9d-ad39-44c9-b8d2-15dd03a0ce9b)
+
 
 ## 🛠️ How It Works
 1. **Upload a Thai bank transfer slip**.

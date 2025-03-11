@@ -147,57 +147,61 @@ function App() {
   }
   //* === Return Section ==========================================================================
   return (
-    <main className="p-5 max-w-4xl mx-auto">
+    <main className="p-5 mx-auto lg:grid grid-cols-2 ">
       {/* Background Gradient */}
       <div className="gradient-bg"></div>
 
-      <TitleApp />
+      <div className='lg:py-4'>
+        <TitleApp />
 
-      {/* Upload and Button Section */}
-      <section className="mb-6 z-10 animate-fade-in flex flex-col justify-center items-center">
-        <label htmlFor="file" className="hidden text-xl font-bold mb-2 text-center bg-gradient-to-r from-[#23335c] to-[#3051d6] text-transparent bg-clip-text drop-shadow-lg">อัพโหลด Slip</label>
+        {/* Upload and Button Section */}
+        <section className="mb-6 z-10 animate-fade-in flex flex-col justify-center items-center">
+          <label htmlFor="file" className="hidden text-xl font-bold mb-2 text-center bg-gradient-to-r from-[#23335c] to-[#3051d6] text-transparent bg-clip-text drop-shadow-lg">อัพโหลด Slip</label>
 
-        <div className="border-2 border-dashed border-gray-400 rounded-lg py-6 px-12 flex flex-col items-center justify-center text-gray-500 bg-white hover:bg-gray-100 transition-all cursor-pointer shadow-md w-fit"
-          onDrop={onDrop} onDragOver={onDragOver}>
-          <input type="file" id="file" accept="image/*" onChange={onImageChange} className="hidden w-full h-fill" />
-          <label htmlFor="file" className="flex flex-col items-center cursor-pointer">
-            <FaFileUpload className="text-4xl text-gray-400 mb-2" />
-            <p className="text-gray-600 text-sm">📂 ลากไฟล์มาวาง หรือคลิกเพื่ออัพโหลด</p>
-          </label>
-        </div>
-
-        {image && (
-          <div className="relative mt-6 mx-auto">
-            <Image src={image} alt="Uploaded Preview" width={360} height={360} className="mx-auto" />
-            <button onClick={removeImage} className="absolute -top-2 -right-10 bg-red-600 text-white text-xl px-2 rounded-full hover:bg-red-400">&times;</button>
+          <div className="border-2 border-dashed border-gray-400 rounded-lg py-6 px-12 flex flex-col items-center justify-center text-gray-500 bg-white hover:bg-gray-100 transition-all cursor-pointer shadow-md w-fit"
+            onDrop={onDrop} onDragOver={onDragOver}>
+            <input type="file" id="file" accept="image/*" onChange={onImageChange} className="hidden w-full h-fill" />
+            <label htmlFor="file" className="flex flex-col items-center cursor-pointer">
+              <FaFileUpload className="text-4xl text-gray-400 mb-2" />
+              <p className="text-gray-600 text-sm">📂 ลากไฟล์มาวาง หรือคลิกเพื่ออัพโหลด</p>
+            </label>
           </div>
-        )}
-      </section>
 
-      <section className="mb-2 flex justify-center animate-fade-in-up">
-        <button
-          onClick={easyslip}
-          className={`relative flex items-center justify-center gap-2 px-10 py-1.5 font-semibold text-lg 
-              border-2 border-transparent bg-gradient-to-r from-[#3c4f7e] to-[#4e67ce] 
-              text-white rounded-lg shadow-md transition-all duration-300 ease-in-out 
-              ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 hover:opacity-85 hover:shadow-lg hover:cursor-pointer'}`}
-          disabled={loading}
-        >
-          {loading ? (
-            <>
-              <FaSpinner className="animate-spin text-white text-lg" />
-              Checking...
-            </>
-          ) : (
-            "Check Slip"
+          {image && (
+            <div className="relative mt-6 mx-auto">
+              <Image src={image} alt="Uploaded Preview" width={360} height={360} className="mx-auto" />
+              <button onClick={removeImage} className="absolute -top-2 -right-10 cursor-pointer bg-red-700 text-white text-xl px-2 rounded-full hover:bg-red-400">&times;</button>
+            </div>
           )}
-        </button>
-      </section>
+        </section>
 
+        <section className="mb-2 flex justify-center animate-fade-in-up">
+          <button
+            onClick={easyslip}
+            className={`relative flex items-center justify-center gap-2 px-10 py-1.5 font-semibold text-lg 
+        border-2 border-transparent bg-gradient-to-r from-[#3c4f7e] to-[#4e67ce] 
+        text-white rounded-lg shadow-md transition-all duration-300 ease-in-out 
+        ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 hover:opacity-85 hover:shadow-lg hover:cursor-pointer'}`}
+            disabled={loading}
+          >
+            {loading ? (
+              <>
+                <FaSpinner className="animate-spin text-white text-lg" />
+                Checking...
+              </>
+            ) : (
+              "Check Slip"
+            )}
+          </button>
+        </section>
+
+      </div>
       {/* Upload and Button Section */}
 
       {/*//! Slip Info Compoenent Here*/}
-      <SlipInfo responseData={responseData} />
+      <div className='lg:px-12'>
+        <SlipInfo responseData={responseData} />
+      </div>
     </main>
   );
 }

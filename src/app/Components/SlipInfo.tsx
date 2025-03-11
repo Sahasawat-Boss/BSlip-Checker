@@ -65,20 +65,20 @@ const SlipInfo: React.FC<SlipInfoProps> = ({ responseData }) => {
     return (
         <section className="bg-white border border-gray-100 p-5 rounded-lg shadow-lg mt-8 animate-fade-in">
             {/* Section title */}
-            <h2 className="text-2xl font-semibold mb-3 border-b border-gray-300">Slip Information</h2>
+            <h2 className="text-2xl font-semibold mb-3 border-b border-gray-300 text-gradient-blue-CSS">ข้อมูล Slip</h2>
 
             {/* Display Transaction Reference */}
             <p><strong>Transaction Reference:</strong> {responseData?.data?.data?.transRef || 'N/A'}</p>
 
             {/* Display Date */}
-            <p><strong>Date:</strong> {responseData?.data?.data?.date ? new Date(responseData.data.data.date).toLocaleString() : 'N/A'}</p>
+            <p><strong className='text-blue-700'>Date:</strong> {responseData?.data?.data?.date ? new Date(responseData.data.data.date).toLocaleString() : 'N/A'}</p>
 
             {/* Display Transaction Amount */}
-            <p><strong>Amount:</strong> {responseData?.data?.data?.amount?.amount} {responseData?.data?.data?.amount?.local?.currency}</p>
+            <p><strong className='text-blue-700'>Amount:</strong> {responseData?.data?.data?.amount?.amount} {responseData?.data?.data?.amount?.local?.currency}</p>
 
             {/* Sender Information */}
             <div>
-                <strong>Sender:</strong>
+                <strong className='text-blue-700'>Sender:</strong>
                 <ul className="list-disc pl-5">
                     <li><strong>Bank:</strong> {responseData?.data?.data?.sender?.bank?.name || 'N/A'}</li>
                     <li><strong>Account Name (TH):</strong> {responseData?.data?.data?.sender?.account?.name?.th || 'N/A'}</li>
@@ -89,7 +89,7 @@ const SlipInfo: React.FC<SlipInfoProps> = ({ responseData }) => {
 
             {/* Receiver Information */}
             <div>
-                <strong>Receiver:</strong>
+                <strong className='text-blue-700'>Receiver:</strong>
                 <ul className="list-disc pl-5">
                     <li><strong>Bank:</strong> {responseData?.data?.data?.receiver?.bank?.name || 'N/A'}</li>
                     <li><strong>Account Name (TH):</strong> {responseData?.data?.data?.receiver?.account?.name?.th || 'N/A'}</li>

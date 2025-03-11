@@ -22,9 +22,10 @@ function Navbar() {
                         height={40}
                         className="mr-3 px-0.5 rounded-full"
                     />
-                    <h1 className="text-white text-xl font-semibold">
+                    <h1 className="text-2xl font-extrabold italic text-white tracking-wider">
                         BSlip-Checker
                     </h1>
+
                 </div>
 
                 {/* Desktop Menu */}

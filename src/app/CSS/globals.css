@@ -114,3 +114,8 @@ body {
 }
 
 /*? CSS animate Section========================================================================*/
+
+.text-gradient-blue-CSS{
+  @apply bg-gradient-to-r from-[#23335c] to-[#3051d6] text-transparent bg-clip-text
+}
+

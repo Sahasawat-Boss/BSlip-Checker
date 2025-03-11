@@ -24,7 +24,7 @@ const TitleApp: React.FC = () => {
     return (
         <section className="relative text-center animate-fade-in">
             {/* Gradient H1 */}
-            <h1 className="text-4xl font-extrabold bg-gradient-to-r from-[#23335c] to-[#3051d6] text-transparent bg-clip-text drop-shadow-lg relative inline-block ">
+            <h1 className="text-4xl font-extrabold drop-shadow-lg text-gradient-blue-CSS relative inline-block ">
                 BSlip-Checker
 
                 {/* Info Icon */}
@@ -54,7 +54,7 @@ const TitleApp: React.FC = () => {
             )}
 
             {/* Upload Slip Section (Now Tooltip Won't Overlap) */}
-            <p className="mt-10 mb-2 text-xl font-bold text-center bg-gradient-to-r from-[#23335c] to-[#3051d6] text-transparent bg-clip-text drop-shadow-lg">
+            <p className="mt-10 mb-2 text-xl font-bold text-center drop-shadow-lg text-gradient-blue-CSS">
                 อัพโหลด Slip
             </p>
         </section>

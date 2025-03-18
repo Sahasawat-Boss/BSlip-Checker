@@ -4,7 +4,7 @@
 
 BSlip-Checker VDO >> https://www.youtube.com/shorts/ylGrFObM-uw
 
-The app processes uploaded images of slips and extracts transaction details such as sender, receiver, amount, and date.
+BSlip Checker verifies transaction details from Thai bank transfer slips by comparing uploaded slips with actual bank transaction records.
 
 ![Screenshot 2025-03-11 155246](https://github.com/user-attachments/assets/a301adb1-84d2-44c1-b899-a2175e8ca6e0)
 
